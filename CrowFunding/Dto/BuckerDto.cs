@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrowFunding.Model
+namespace CrowFunding.Dto
 {
-    class Project
+    class BuckerDto
     {
     }
 }

@@ -5,20 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrowFunding.Model
+namespace CrowFunding.Domain
 {
-    public abstract class Users
+    public class Profile
     {
-
-
         public int Id { get; set; }
-        [MaxLength(50)][Required]
+        [MaxLength(50)]
+        [Required]
         public string FirstName { get; set; }
-        [MaxLength(50)][Required]
+        [MaxLength(50)]
+        [Required]
         public string LastName { get; set; }
         [Required]
         public string Email { get; set; }
-        [Required]
-        public  string Password  { get; set; }
+        [Required] [MaxLength(20)]
+        private string Password { get; set; }
+        public Creator Creator { get; set; }
     }
 }
