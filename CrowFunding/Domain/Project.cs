@@ -12,12 +12,11 @@ namespace CrowFunding.Domain
         public string Title { get; set; }
         public  string Description {get; set;}
         public string Video { get; set; }
-        public string Photos { get; set; }
+        public string Image { get; set; }
 
         public bool PostStatus { get; set; } = true;
-        public List<Bucker> Bucker { get; set; } = new();
-        public Creator Creator { get; set; }
         public ProjectCategory ProjectCategory { get; set; }
+        public System.DateTime DateInserted { get; set; }
 
     }
 }

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace CrowFunding.Domain
 {
-    public class Bucker 
+    public class ProjectBacker
     {
         public int Id { get; set; }
-        public int? ProfileId { get; set; }
-        public List<Project> Project { get; set; } = new();
-
+        public int TotalSpent { get; set; }
+        public string Progress { get; set; }
+        public virtual Project Project { get; set; }
     }
+        
 }

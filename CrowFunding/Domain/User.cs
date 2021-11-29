@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CrowFunding.Domain
 {
-    public class Profile
+    public class User
     {
         public int Id { get; set; }
         [MaxLength(50)]
@@ -20,6 +20,12 @@ namespace CrowFunding.Domain
         public string Email { get; set; }
         [Required] [MaxLength(20)]
         private string Password { get; set; }
-        public Creator Creator { get; set; }
+        public virtual ICollection<ProjectBacker> ProjectsBacker { get; set; }
+        public virtual ICollection<ProjectPage> ProjectPages { get; set; }
+        public User()
+        {
+            ProjectsBacker = new List<ProjectBacker>();
+            ProjectPages = new List<ProjectPage>();
+        }
     }
 }

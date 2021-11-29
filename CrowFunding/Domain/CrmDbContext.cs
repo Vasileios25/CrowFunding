@@ -10,14 +10,15 @@ namespace CrowFunding.Domain
     public class CrmDbContext : DbContext
     {
 
-        public DbSet<Bucker> Buckers { get; set; }
-        public DbSet<Creator> Creators { get; set; }
-        public DbSet<Project> Projects { get; set; }
-        //public DbSet<ProjectCategory> ProjectCategory { get; set; }
-
-        public DbSet<Profile> Profile { get; set; }
-        public DbSet<Basket> Basket { get; set; }
-
+        public DbSet<User> User{ get; set; }
+        public DbSet<ProjectPage> ProjectPage { get; set; }
+        //public DbSet<ProjectCategory> ProjectCategories { get; set; }
+        public DbSet<ProjectStatus> ProjectStatuses { get; set; }
+        public DbSet<ProjectTrending> ProjectTrendings { get; set; }
+        public DbSet<Reward> Rewards { get; set; }
+        
+        public DbSet<ProjectBasket> ProjectBasket { get; set; }
+        public DbSet<ProjectBacker> ProjectBackers { get; set; }
 
 
 
