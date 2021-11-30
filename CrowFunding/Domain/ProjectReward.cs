@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrowFunding.Domain
 {
-    public class Reward
+    public class ProjectReward
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -17,7 +17,7 @@ namespace CrowFunding.Domain
         public string Description { get; set; }
         public string Image { get; set; }
         public string Video { get; set; }
-        public bool StatusUpdate { get; set; }
+        //public bool StatusUpdate { get; set; }
         public DateTime DueDate { get; set; }
         public int CurrentAmount { get; set; }
         public int TotalBackers { get; set; }
@@ -30,12 +30,12 @@ namespace CrowFunding.Domain
         public int BasketId { get; set; }
 
 
-        public virtual ICollection<Reward> Reward { get; set; }
+        public virtual ICollection<ProjectReward> Reward { get; set; }
         public virtual System.Collections.Generic.ICollection<ProjectBacker> ProjectBacker { get; set; }
         public ProjectPage()
         {
             ProjectBacker = new List<ProjectBacker>();
-            Reward = new List<Reward>();
+            Reward = new List<ProjectReward>();
             
         }
     }

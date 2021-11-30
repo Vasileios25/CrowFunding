@@ -14,8 +14,8 @@ namespace CrowFunding.Domain
         public DbSet<ProjectPage> ProjectPage { get; set; }
         //public DbSet<ProjectCategory> ProjectCategories { get; set; }
         public DbSet<ProjectStatus> ProjectStatuses { get; set; }
-        public DbSet<ProjectTrending> ProjectTrendings { get; set; }
-        public DbSet<Reward> Rewards { get; set; }
+        
+        public DbSet<ProjectReward> Rewards { get; set; }
         
         public DbSet<ProjectBasket> ProjectBasket { get; set; }
         public DbSet<ProjectBacker> ProjectBackers { get; set; }
@@ -23,7 +23,7 @@ namespace CrowFunding.Domain
 
 
 
-
+        public CrmDbContext(DbContextOptions options) : base(options) { }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
