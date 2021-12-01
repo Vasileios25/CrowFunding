@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CrowFunding.Service
 {
-    class ProjectBackerService
+    public class ProjectBackerService
     {
     }
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CrowFunding.Domain;
 using CrowFunding.Service;
+using CrowFunding.Services.IServices;
 
 namespace CrowFundingMvc
 {
@@ -25,11 +26,12 @@ namespace CrowFundingMvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CrmDbContext>()(options => options
-                .EnableSensitiveDataLogging()
-                .UseSqlServer(Configuration.GetConnectionString("CrowFunding"))); 
+            services.AddDbContext<CrmDbContext>();//(options => options
+            //    .EnableSensitiveDataLogging()
+            //    .UseSqlServer(Configuration.GetConnectionString("CrowFunding"))); 
             services.AddScoped<IProjectPageService, ProjectPageService>();
             services.AddControllersWithViews();
+            services.AddScoped<IProjectBasket, ProjectBasketService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

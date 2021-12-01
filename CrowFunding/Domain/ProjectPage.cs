@@ -22,6 +22,8 @@ namespace CrowFunding.Domain
         public int CurrentAmount { get; set; }
         public int TotalBackers { get; set; }
         public int GoalAmount { get; set; }
+        public DateTime DateInserted { get; set; }
+
         public int ProjectCategoryId { get; set; }
         public virtual ProjectCategory ProjectCategory { get; set; }
         public int StatusId { get; set; }
@@ -29,9 +31,20 @@ namespace CrowFunding.Domain
         public virtual User User { get; set; } = new();
         public int BasketId { get; set; }
 
+        private ICollection<T> category { get; set; }
+
+        public virtual ICollection<T> GetCategory()
+        {
+            return category;
+        }
+
+        public virtual void SetCategory(ICollection<T> value)
+        {
+            category = value;
+        }
 
         public virtual ICollection<ProjectReward> Reward { get; set; }
-        public virtual System.Collections.Generic.ICollection<ProjectBacker> ProjectBacker { get; set; }
+        public virtual ICollection<ProjectBacker> ProjectBacker { get; set; }
         public ProjectPage()
         {
             ProjectBacker = new List<ProjectBacker>();

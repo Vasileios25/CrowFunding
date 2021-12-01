@@ -14,6 +14,6 @@ namespace CrowFunding.Domain
         public DateTime DateTime { get; set; }
         public decimal TotalPrice { get; set; }
        
-        public virtual List<Project> Projects { get; set; }
+        public virtual List<ProjectPage> Projects { get; set; }
     }
 }
