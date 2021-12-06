@@ -54,9 +54,16 @@ namespace CrowFunding.Service
             return await usersQuery.Select(a => a.Convert()).ToListAsync();
         }
 
-        public Task<UserDto> GetUser(int id, bool includeBooks)
+        public async Task<UserDto> GetUser(int id, bool includeBooks)
         {
-            throw new NotImplementedException();
+            var UserQuery = _db.User.Where(a => a.Id == id);
+            if (includeBooks)
+            {
+                UserQuery = UserQuery.Include(a => a.Books);
+            }
+
+            var user = await UserQuery.SingleOrDefaultAsync();
+            return user.Convert();
         }
 
         public Task<UserDto> Replace(int bookId, UserDto dto)

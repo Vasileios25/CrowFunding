@@ -13,6 +13,11 @@ namespace CrowFunding.Service
     {
         private readonly CrmDbContext _db;
 
+        public ProjectBackerService(CrmDbContext backer)
+        {
+            _db = backer;
+        }
+
 
     }
 }
