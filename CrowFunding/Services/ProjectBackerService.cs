@@ -1,4 +1,5 @@
-﻿using CrowFunding.Dto;
+﻿using CrowFunding.Domain;
+using CrowFunding.Dto;
 using CrowFunding.Services.IServices;
 using System;
 using System.Collections.Generic;
@@ -8,31 +9,10 @@ using System.Threading.Tasks;
 
 namespace CrowFunding.Service
 {
-    public class ProjectBackerService : IProjectBasket
+    public class ProjectBackerService
     {
-        public Task<BasketDto> AddProject2Basket(int basketId, int projectId)
-        {
-            throw new NotImplementedException();
-        }
+        private readonly CrmDbContext _db;
 
-        public Task<BasketDto> CreateBasket(BasketDto dto)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task<BasketDto> GetBasket(BasketDto dto)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<decimal> GetTotalCost()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> RemoveProjectBasket(int basketId, int projectId)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

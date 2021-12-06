@@ -19,7 +19,7 @@ namespace CrowFunding.Domain
         [Required]
         public string Email { get; set; }
         [Required] [MaxLength(20)]
-        private string Password { get; set; }
+        public string Password { get; set; }
         public virtual ICollection<ProjectBacker> ProjectsBacker { get; set; }
         public virtual ICollection<ProjectPage> ProjectPages { get; set; }
         public User()

@@ -82,7 +82,7 @@ namespace CrowFunding.Service
 
 
 
-            };
+        };
     }
 
         public async Task<ProjectDto> Replace(int projectId, ProjectDto dto)

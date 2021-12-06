@@ -12,6 +12,7 @@ namespace CrowFunding.Dto
         public int Id { get; set; }
         public DateTime DateTime { get; set; }
         public decimal TotalPrice { get; set; }
+        public int UserId { get; set; }
 
     }
 }

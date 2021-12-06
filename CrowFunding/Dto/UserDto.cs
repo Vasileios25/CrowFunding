@@ -16,7 +16,7 @@ namespace CrowFunding.Dto
         public string LastName { get; set; }
       
         public string Email { get; set; }
-        private string Password { get; set; }
+        public string Password { get; set; }
         public List<ProjectDto> Projects { get; set; }
     }
 }

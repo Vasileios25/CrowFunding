@@ -58,6 +58,26 @@ namespace CrowFunding.Dto
             };
             }
 
+            public static UserDto Convert(this User user)
+            {
+                var result = new UserDto()
+                {
+                    Id = user.Id,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
+                    Password = user.Password
+                };
+
+                if (user.ProjectPages is not null)
+                {
+                    result.Projects = user.ProjectPages.Select(b => b.Convert()).ToList();
+                }
+
+                return result;
+
+        }
+
         }
     
 }

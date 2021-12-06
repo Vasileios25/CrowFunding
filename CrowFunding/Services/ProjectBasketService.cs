@@ -22,7 +22,17 @@ namespace CrowFunding.Service
 
         public Task<BasketDto> AddProject2Basket(int basketId, int projectId)
         {
-            throw new NotImplementedException();
+            var basketDb = _db.ProjectBasket.Find(basketId);
+            if (basketDb == null)
+            {
+                return null;
+            }
+            var projectDb = _db.ProjectPage.Find(projectId);
+            if (projectDb == null)
+            {
+                return null;
+            }
+
         }
 
        
@@ -44,25 +54,25 @@ namespace CrowFunding.Service
             return projectBasket.ConvertBasket();
         }
 
-        public Task<BasketDto> GetBasket(int basketId)
-        {
-            throw new NotImplementedException();
-
-        }
+     
 
         public Task<BasketDto> GetBasket(BasketDto dto)
         {
-            throw new NotImplementedException();
+            
         }
 
-        public Task<decimal> GetTotalCost(int basketId)
+       
+        public async Task<decimal> GetTotalCost(BasketDto dto)
         {
-            throw new NotImplementedException();
-        }
+            User user = await _db.User.SingleOrDefaultAsync(u => u.Id == dto.Id);
+            if (user == null) return null;
 
-        public Task<decimal> GetTotalCost()
-        {
-            throw new NotImplementedException();
+            ProjectBasket projectBasket = await _db.ProjectBasket.SingleOrDefaultAsync(b => b.Id == dto.Id);
+            if (user == null) return null;
+
+            _db.ProjectBasket.Sum
+
+
         }
 
         public Task<bool> RemoveProjectBasket(int basketId, int projectId)
