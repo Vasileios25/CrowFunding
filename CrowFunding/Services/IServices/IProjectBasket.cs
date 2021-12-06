@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CrowFunding.Domain;
+using CrowFunding.Dto;
 
 namespace CrowFunding.Services.IServices
 {
     public interface IProjectBasket
     {
-        public ProjectBasket CreateBasket(int userId);
+        public Task<BasketDto> CreateBasket(BasketDto dto);
 
-        public ProjectBasket GetBasket(int basketId);
-        public decimal GetTotalCost(int basketId);
-        public ProjectBasket AddProjectBasket(int basketId, int projectId);
-        public bool RemoveProjectBasket(int basketId, int projectId);
+        public Task<BasketDto> GetBasket(BasketDto dto);
+        public Task<decimal> GetTotalCost();
+        public Task<BasketDto> AddProject2Basket(int basketId, int projectId);
+        public Task<bool> RemoveProjectBasket(int basketId, int projectId);
     }
 }

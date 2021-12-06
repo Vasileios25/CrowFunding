@@ -31,9 +31,9 @@ namespace CrowFunding.Domain
         public virtual User User { get; set; } = new();
         public int BasketId { get; set; }
 
-        private ICollection<T> category { get; set; }
+        //private ICollection<T> category { get; set; }
 
-        public virtual ICollection<T> GetCategory()
+       /* public virtual icollection<t> getcategory()
         {
             return category;
         }
@@ -41,7 +41,7 @@ namespace CrowFunding.Domain
         public virtual void SetCategory(ICollection<T> value)
         {
             category = value;
-        }
+        }*/
 
         public virtual ICollection<ProjectReward> Reward { get; set; }
         public virtual ICollection<ProjectBacker> ProjectBacker { get; set; }

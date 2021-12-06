@@ -43,4 +43,21 @@ namespace CrowFunding.Dto
                 }
             };
         }
+
+            public static BasketDto ConvertBasket(this ProjectBasket projectBasket)
+            {
+            return new BasketDto()
+            {
+                Id = projectBasket.Id,
+                DateTime = projectBasket.DateTime,
+                TotalPrice = projectBasket.TotalPrice,
+
+
+
+
+            };
+            }
+
+        }
+    
 }

@@ -14,9 +14,17 @@ namespace CrowFunding.Domain
         [Description("Science stuff")]
         SCIENCE,
         [Description("Car stuff")]
-        Cars,
+        CARS,
         [Description("Video Games stuff")]
-        Video_Games,
+        VIDEO_GAMES,
+        [Description ("Art stuff")]
+        ART,
+        [Description("Food stuff")]
+        FOOD,
+        [Description ("Kids stuff")]
+        FOR_KIDS,
+        [Description ("Cinema stuff")]
+        MOVIES,
         [Description("Other")]
         OTHER
 

@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CrowFundingApi\CrowFundingApi.csproj" />
     <ProjectReference Include="..\CrowFunding\CrowFunding.csproj" />
   </ItemGroup>
 

@@ -85,6 +85,44 @@ namespace CrowFunding.Service
             };
     }
 
+        public async Task<ProjectDto> Replace(int projectId, ProjectDto dto)
+        {
+            ProjectPage projectPage = await _db.ProjectPage
+                .SingleOrDefaultAsync(pr => pr.Id == projectId);
+
+            if (projectPage is null)
+                throw new NotFoundException("The project id is invalid or has been removed.");
+
+            if (projectPage.Image is null)
+                throw new NotFoundException
+                   ("An image must be specified. To update only specific properties of a project, consider using the PATCH method");
+            if (projectPage.Title is null)
+                throw new NotFoundException
+                  ("A title must be specified. To update only specific properties of a project, consider using the PATCH method");
+            if (projectPage.Video is null)
+                throw new NotFoundException
+                 ("A video must be specified. To update only specific properties of a project, consider using the PATCH method");
+            if (projectPage.Description is null)
+                throw new NotFoundException
+                 ("A description must be specified. To update only specific properties of a project, consider using the PATCH method");
+
+            User user = await _db.User.SingleOrDefaultAsync(u => u.Id == dto.User.Id);
+
+            if (user is null)
+                throw new NotFoundException("The user id is invalid or has been removed.");
+
+            projectPage.Title = dto.Title;
+            projectPage.Description = dto.Description;
+            projectPage.Video = dto.Video;
+            projectPage.Image = dto.Image;
+
+            await _db.SaveChangesAsync();
+
+            return projectPage.ConvertUpdate();
+
+
+        }
+
         public Task<List<ProjectDto>> Search(string Ttile, string Description, string Image, string Video)
         {
             //var results = _db.ProjectPage.Include(pr => pr.pr)

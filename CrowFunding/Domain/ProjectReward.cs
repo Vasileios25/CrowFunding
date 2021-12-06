@@ -17,7 +17,7 @@ namespace CrowFunding.Domain
         public bool IsAvailable { get; set; }
         public int Inventory { get; set; }
         public int FeeAmount { get; set; }
-        public virtual Project Project { get; set; }
+        public virtual ProjectPage Project { get; set; }
         public int ProjectPageId { get; set; }
 
 
