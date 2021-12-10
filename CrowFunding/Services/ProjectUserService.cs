@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Web;
+
 
 namespace CrowFunding.Service
 {
@@ -43,10 +46,10 @@ namespace CrowFunding.Service
             return true;
         }
 
-        public async Task<List<UserDto>> GetAllUser(bool includeBooks)
+        public async Task<List<UserDto>> GetAllUser(bool includeProjects)
         {
-            IQueryable<User> usersQuery = _db.Authors;
-            if (includeBooks)
+            IQueryable<User> usersQuery = _db.User;
+            if (includeProjects)
             {
                 usersQuery = _db.User.Include(a => a.ProjectPages);
             }
@@ -54,17 +57,19 @@ namespace CrowFunding.Service
             return await usersQuery.Select(a => a.Convert()).ToListAsync();
         }
 
-        public async Task<UserDto> GetUser(int id, bool includeBooks)
+        public async Task<UserDto> GetUser(int id, bool includeProjects)
         {
             var UserQuery = _db.User.Where(a => a.Id == id);
-            if (includeBooks)
+            if (includeProjects)
             {
-                UserQuery = UserQuery.Include(a => a.Books);
+                UserQuery = UserQuery.Include(a => a.ProjectPages);
             }
 
             var user = await UserQuery.SingleOrDefaultAsync();
             return user.Convert();
         }
+
+       
 
         public Task<UserDto> Replace(int bookId, UserDto dto)
         {

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrowFunding", "CrowFunding\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrowFundingMvc", "CrowFundingMvc\CrowFundingMvc.csproj", "{EB9E9611-4849-4B0B-9C43-8F48D752EB0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowFundingApi", "CrowFundingApi\CrowFundingApi.csproj", "{C7B67E85-9C1B-4FCE-B1FB-D213E7F59FD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrowFundingApi", "CrowFundingApi\CrowFundingApi.csproj", "{C7B67E85-9C1B-4FCE-B1FB-D213E7F59FD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CrowFunding.Domain;
 
-namespace CrowFunding.Dto
+namespace CrowFundingMvc.Models
+
 {
-    public class UserDto
+    public class UserAccount
     {
 
         [Key, Column(Order = 1)]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int id { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 3)]
         public string FirstName { get; set; }
@@ -37,8 +38,10 @@ namespace CrowFunding.Dto
         {
             return this.FirstName + " " + this.LastName;
         }
+        public virtual ICollection<ProjectBacker> ProjectsBacker { get; set; }
+        public virtual ICollection<ProjectPage> ProjectPages { get; set; }
+        public User user { get; set; }
+       
 
-
-        public List<ProjectDto> Projects { get; set; }
     }
 }

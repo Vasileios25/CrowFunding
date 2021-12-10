@@ -11,7 +11,7 @@ namespace CrowFunding.Services.IServices
     {
         public Task<UserDto> GetUser(int id, bool includeProjects);
         public Task<List<UserDto>> GetAllUser(bool includeProjects);
-        public Task<UserDto> AddUser(UserDto dto);
+        
         public Task<List<UserDto>> Search(string firstName, string lastName, bool includeProjects);
         public Task<UserDto> Update(int userId, UserDto dto);
         public Task<UserDto> Replace(int projectId, UserDto dto);

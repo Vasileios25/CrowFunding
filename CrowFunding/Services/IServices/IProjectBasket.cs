@@ -13,7 +13,7 @@ namespace CrowFunding.Services.IServices
         public Task<BasketDto> CreateBasket(BasketDto dto);
 
         public Task<BasketDto> GetBasket(BasketDto dto);
-        public Task<decimal> GetTotalCost(BasketDto);
+        public Task<decimal> GetTotalCost(BasketDto dto);
         public Task<BasketDto> AddProject2Basket(int basketId, int projectId);
         public Task<bool> RemoveProjectBasket(int basketId, int projectId);
     }

@@ -22,57 +22,22 @@ namespace CrowFunding.Service
 
         public Task<BasketDto> AddProject2Basket(int basketId, int projectId)
         {
-            var basketDb = _db.ProjectBasket.Find(basketId);
-            if (basketDb == null)
-            {
-                return null;
-            }
-            var projectDb = _db.ProjectPage.Find(projectId);
-            if (projectDb == null)
-            {
-                return null;
-            }
-
+            throw new NotImplementedException();
         }
 
-       
-
-        public async Task<BasketDto> CreateBasket(BasketDto dto)
+        public Task<BasketDto> CreateBasket(BasketDto dto)
         {
-            User user = await _db.User.SingleOrDefaultAsync(u => u.Id == dto.Id);
-            if (user == null) return null;
-
-            ProjectBasket projectBasket = new ProjectBasket()
-            {
-                DateTime = DateTime.Now,
-                TotalPrice = dto.TotalPrice
-            };
-
-            _db.ProjectBasket.Add(projectBasket);
-            await _db.SaveChangesAsync();
-
-            return projectBasket.ConvertBasket();
+            throw new NotImplementedException();
         }
-
-     
 
         public Task<BasketDto> GetBasket(BasketDto dto)
         {
-            
+            throw new NotImplementedException();
         }
 
-       
-        public async Task<decimal> GetTotalCost(BasketDto dto)
+        public Task<decimal> GetTotalCost(BasketDto dto)
         {
-            User user = await _db.User.SingleOrDefaultAsync(u => u.Id == dto.Id);
-            if (user == null) return null;
-
-            ProjectBasket projectBasket = await _db.ProjectBasket.SingleOrDefaultAsync(b => b.Id == dto.Id);
-            if (user == null) return null;
-
-            _db.ProjectBasket.Sum
-
-
+            throw new NotImplementedException();
         }
 
         public Task<bool> RemoveProjectBasket(int basketId, int projectId)
